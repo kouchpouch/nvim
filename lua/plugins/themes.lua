@@ -6,6 +6,7 @@ return {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "Mofiqul/dracula.nvim" },
 	{ "EdenEast/nightfox.nvim" },
+	{ "catppuccin/nvim", name = "catppuccin"},
 	{
     {
         "folke/tokyonight.nvim",
@@ -27,7 +28,7 @@ return {
                     floats = "dark", -- style for floating windows
                 },
             })
-		vim.cmd("colorscheme tokyonight")
+		vim.cmd("colorscheme catppuccin-macchiato")
 
         end
     },

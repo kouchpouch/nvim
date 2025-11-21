@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>vn', ':vert new<CR>:Ex<CR>')
+vim.keymap.set('n', '<leader>hn', ':hor new<CR>:Ex<CR>')
 
 
 --Custom Shit for LSP and cmp
