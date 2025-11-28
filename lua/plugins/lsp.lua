@@ -1,5 +1,4 @@
-return {
-    "neovim/nvim-lspconfig",
+return { "neovim/nvim-lspconfig",
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -30,30 +29,46 @@ return {
 				"docker_compose_language_service",
 				"dockerls",
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
+		handlers = {
+			-- Default handler
+			function(server_name)
+				require("lspconfig")[server_name].setup {
+					capabilities = capabilities
+				}
+			end,
 
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
+			-- lua_ls override
+			["lua_ls"] = function()
+				require("lspconfig").lua_ls.setup({
+					capabilities = capabilities,
+					settings = {
+						Lua = {
+							runtime = { version = "Lua 5.1" },
+							diagnostics = {
+								globals = { "vim", "it", "describe", "before_each", "after_each" },
+							},
+						},
+					},
+				})
+			end,
 
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-				    runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end,
-            }
-        })
+			-- pylsp override
+			["pylsp"] = function()
+				require("lspconfig").pylsp.setup({
+					settings = {
+						pylsp = {
+							plugins = {
+								pycodestyle = {
+									ignore = { "W391" },
+									maxLineLength = 100,
+								},
+							},
+						},
+					},
+				})
+			end,
+		}
+	})
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
