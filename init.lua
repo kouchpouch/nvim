@@ -23,7 +23,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("plugins.themes")
-vim.cmd("colorscheme catppuccin-macchiato")
+
+vim.cmd("colorscheme moonfly")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
