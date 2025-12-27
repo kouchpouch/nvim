@@ -59,7 +59,8 @@ return { "neovim/nvim-lspconfig",
 						pylsp = {
 							plugins = {
 								pycodestyle = {
-									ignore = { "W391" },
+									ignore = "W391",
+									ignore = "E501",
 									maxLineLength = 100,
 								},
 							},
