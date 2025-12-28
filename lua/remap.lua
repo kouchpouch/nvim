@@ -3,6 +3,9 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>vn', ':vert new<CR>:Ex<CR>')
 vim.keymap.set('n', '<leader>hn', ':hor new<CR>:Ex<CR>')
 vim.keymap.set('i', 'jj', '<Esc>')
+vim.keymap.set('n', '<leader>6', '60<C-w>|')
+vim.keymap.set('n', '<leader>8', '80<C-w>|')
+vim.keymap.set('n', '<leader>10', '100<C-w>|')
 
 
 --Custom Shit for LSP and cmp
