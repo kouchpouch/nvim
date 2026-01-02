@@ -6,7 +6,7 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<leader>6', '60<C-w>|')
 vim.keymap.set('n', '<leader>8', '80<C-w>|')
 vim.keymap.set('n', '<leader>10', '100<C-w>|')
-
+vim.keymap.set('n', '<leader>no', ':noh<CR>')
 
 --Custom Shit for LSP and cmp
 -- note: diagnostics are not exclusive to lsp servers
