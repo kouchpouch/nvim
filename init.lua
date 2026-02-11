@@ -24,7 +24,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("plugins.themes")
 
-vim.cmd("colorscheme moonfly")
+--vim.cmd("colorscheme moonfly")
+vim.cmd("colorscheme nightfly")
 --vim.cmd("colorscheme modus_operandi")
 
 require("luasnip.loaders.from_vscode").lazy_load()
