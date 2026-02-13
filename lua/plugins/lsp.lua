@@ -51,23 +51,6 @@ return { "neovim/nvim-lspconfig",
 					},
 				})
 			end,
-
-			-- pylsp override
-			["pylsp"] = function()
-				require("lspconfig").pylsp.setup({
-					settings = {
-						pylsp = {
-							plugins = {
-								pycodestyle = {
-									ignore = "W391",
-									ignore = "E501",
-									maxLineLength = 100,
-								},
-							},
-						},
-					},
-				})
-			end,
 		}
 	})
 
