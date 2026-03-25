@@ -24,11 +24,6 @@ return { "neovim/nvim-lspconfig",
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = {
-                "lua_ls",
-				"docker_compose_language_service",
-				"dockerls",
-            },
 		handlers = {
 			-- Default handler
 			function(server_name)
