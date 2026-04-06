@@ -20,6 +20,9 @@ vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 -- Remove binds
 vim.keymap.set('n', '<C-w>q', '<nop>')
 
+-- Make Ctrl + c behave the exact same as <esc>
+vim.keymap.set({'n', 'v', 'i'}, '<C-c>', '<esc>')
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
