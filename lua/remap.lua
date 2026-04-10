@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>9', '95<C-w>|')
 vim.keymap.set('n', '<leader>10', '105<C-w>|')
 vim.keymap.set('n', '<leader>no', ':noh<CR>')
 
---Custom Shit for LSP and cmp
+-- Custom Shit for LSP and cmp
 -- note: diagnostics are not exclusive to lsp servers
 -- so these can be global keybindings
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
@@ -18,9 +18,12 @@ vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 
 -- Remove binds
+-- -- Remove "CTRL-W, Q" from closing the active window, I was hitting this all
+-- -- the time.
 vim.keymap.set('n', '<C-w>q', '<nop>')
 
--- Make Ctrl + c behave the exact same as <esc>
+-- Make "CTRL-C" behave the exact same as <esc>, makes the LSP diagnostics not
+-- disappear. I use CTRL-C almost exclusively and this bugged me.
 vim.keymap.set({'n', 'v', 'i'}, '<C-c>', '<esc>')
 
 vim.api.nvim_create_autocmd('LspAttach', {
