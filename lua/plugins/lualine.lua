@@ -5,7 +5,15 @@ return {
 			'nvim-tree/nvim-web-devicons'
 		},
 		opts = {
-			theme = "nightfly"
+			theme = "nightfly",
+			sections = {
+				lualine_a = {'mode'},
+				lualine_b = {'branch', 'diff', 'diagnostics'},
+				lualine_c = {'filename'},
+				lualine_x = {'filetype'},
+				lualine_y = {'location'},
+				lualine_z = {}
+			},
 		},
 	},
 }
